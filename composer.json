@@ -1,0 +1,19 @@
+{
+    "name": "tualo/server",
+    "description": "Server class for tualo office",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas Hoffmann",
+            "email": "thomas.hoffmann@tualo.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Tualo\\Office\\Server\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
