@@ -18,7 +18,7 @@ class Server{
         foreach($settings as $key=>$value){ if(!defined($key)){ define($key,$value); } TualoApplication::set($key,$value);}
         if (!defined('BASIC_COMPONENTS')) define('BASIC_COMPONENTS','cmp_bsc cmp_ext_6 cmp_ext cmp_tualo cmp_tualo_theme cmp_ds cmp_dashboard cmp_ext_6_ext-theme-tualo');
 
-        if (defined('__USE_DB_SESSION_HANLDER__')&&(__USE_DB_SESSION_HANLDER__==1)) session_set_save_handler(new TualoDBSessionHandler(), true);
+        // if (defined('__USE_DB_SESSION_HANLDER__')&&(__USE_DB_SESSION_HANLDER__==1)) session_set_save_handler(new TualoDBSessionHandler(), true);
 
         
         TualoApplication::run(); // run all middlewares
