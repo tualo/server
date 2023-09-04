@@ -15,5 +15,19 @@
         }
     },
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "tualo/ds": "*",
+        "tualo/bsc": "dev-main",
+        "tualo/extjscmplr": "dev-main",
+        "tualo/iconfont": "dev-main",
+        "tualo/monacoeditor": "dev-main",
+        "tualo/usereditor": "dev-main",
+        "tualo/menueditor": "dev-main",
+        "tualo/groupeditor": "dev-main",
+        "tualo/profile": "dev-main",
+        "tualo/cherry-markdown": "dev-main",
+        "tualo/tualojs": "dev-main",
+        "tualo/dashboard": "dev-main",
+        "tualo/dbviewer": "dev-main"
+    }
 }
