@@ -17,8 +17,8 @@ class Server
         TualoApplication::set('configurationFile', TualoApplication::get('basePath') . '/configuration/.htconfig');
         $settings = parse_ini_file((string)TualoApplication::get('configurationFile'), true);
         TualoApplication::set('configuration', $settings);
-        if (isset($settings['php'])) {
-            foreach ($settings['php'] as $key => $value) {
+        if (isset($settings['php-server'])) {
+            foreach ($settings['php-server'] as $key => $value) {
                 ini_set($key, $value);
             }
         }
