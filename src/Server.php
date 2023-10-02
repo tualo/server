@@ -17,6 +17,11 @@ class Server
         TualoApplication::set('configurationFile', TualoApplication::get('basePath') . '/configuration/.htconfig');
         $settings = parse_ini_file((string)TualoApplication::get('configurationFile'), true);
         TualoApplication::set('configuration', $settings);
+        if (isset($settings['php'])) {
+            foreach ($settings['php'] as $key => $value) {
+                ini_set($key, $value);
+            }
+        }
         //foreach($settings as $key=>$value){ if(!defined($key)){ define($key,$value); } TualoApplication::set($key,$value);}
         TualoApplication::run(); // run all middlewares
     }
