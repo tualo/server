@@ -25,6 +25,7 @@ class Server
             }
         }
         //foreach($settings as $key=>$value){ if(!defined($key)){ define($key,$value); } TualoApplication::set($key,$value);}
+        TualoApplication::runHeaders();
         TualoApplication::run(); // run all middlewares
     }
 }
