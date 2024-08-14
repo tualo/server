@@ -16,18 +16,16 @@
     },
     "minimum-stability": "dev",
     "require": {
-        "tualo/ds": "*",
-        "tualo/bsc": "dev-main",
-        "tualo/extjscmplr": "dev-main",
-        "tualo/iconfont": "dev-main",
-        "tualo/monacoeditor": "dev-main",
-        "tualo/usereditor": "dev-main",
-        "tualo/menueditor": "dev-main",
-        "tualo/groupeditor": "dev-main",
-        "tualo/profile": "dev-main",
-        "tualo/cherry-markdown": "dev-main",
-        "tualo/tualojs": "dev-main",
-        "tualo/dashboard": "dev-main",
-        "tualo/dbviewer": "dev-main"
+        "tualo/ds": "^1.0.0",
+        "tualo/bsc": "^1.0.0",
+        "tualo/extjscmplr": "^1.0.0",
+        "tualo/iconfont": "^1.0.0",
+        "tualo/monacoeditor": "^1.0.0",
+        "tualo/usereditor": "~1.0.0",
+        "tualo/menueditor": "~1.0.0",
+        "tualo/groupeditor": "~1.0.0",
+        "tualo/profile": "^1.0.0",
+        "tualo/tualojs": "^1.0.0",
+        "tualo/dashboard": "^1.0.0"
     }
 }
