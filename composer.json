@@ -26,6 +26,7 @@
         "tualo/groupeditor": "~1.0.0|| @dev",
         "tualo/profile": "^1.0.0|| @dev",
         "tualo/tualojs": "^1.0.0|| @dev",
-        "tualo/dashboard": "^1.0.0|| @dev"
+        "tualo/dashboard": "^1.0.0|| @dev",
+        "tualo/pug": "^1.0.0|| @dev"
     }
 }
