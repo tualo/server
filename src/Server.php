@@ -9,27 +9,11 @@ use tualo\Office\Basic\Middleware\Maintaince;
 
 class Server
 {
-    public function run()
+    public static function loadIniFile()
     {
-
-        //TualoApplication::set('requestPath', dirname($_SERVER["REQUEST_URI"]));
-        TualoApplication::set('requestPath', dirname($_SERVER["SCRIPT_NAME"]));
-        TualoApplication::set('basePath', dirname($_SERVER['SCRIPT_FILENAME']));
-        TualoApplication::set('cachePath', TualoApplication::get('basePath') . '/cache/');
-        TualoApplication::set('configurationFile', TualoApplication::get('basePath') . '/configuration/.htconfig');
         $settings = parse_ini_file((string)TualoApplication::get('configurationFile'), true);
 
 
-        /*
-        __COOKIE_PATH__ = "/"
-        __DRIVER__ = MYSQL
-        __SESSION_DSN__ = "sessions"
-        __SESSION_HOST__ = "172.18.0.3"
-        __SESSION_PASSWORD__ = ""
-        __SESSION_PORT__ = 3306
-        __SESSION_USER__ = "thomashoffmann"
-        FORCE_DB_HOST= "172.18.0.3"
-        */
 
         if (!isset($settings['database']))  $settings['php-server'] = [];
         ini_set('mysqli.default_host', '127.0.0.1');
@@ -77,7 +61,17 @@ class Server
         }
 
         TualoApplication::set('configuration', $settings);
+    }
+    public function run()
+    {
 
+        //TualoApplication::set('requestPath', dirname($_SERVER["REQUEST_URI"]));
+        TualoApplication::set('requestPath', dirname($_SERVER["SCRIPT_NAME"]));
+        TualoApplication::set('basePath', dirname($_SERVER['SCRIPT_FILENAME']));
+        TualoApplication::set('cachePath', TualoApplication::get('basePath') . '/cache/');
+        TualoApplication::set('configurationFile', TualoApplication::get('basePath') . '/configuration/.htconfig');
+
+        self::loadIniFile();
 
 
 
