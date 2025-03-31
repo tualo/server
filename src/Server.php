@@ -17,7 +17,7 @@ class Server
 
         if (!isset($settings['database']))  $settings['php-server'] = [];
         ini_set('mysqli.default_host', '127.0.0.1');
-        if (!isset($settings['database']['db_name'])      && ($db_name =      getenv('TUALO_DB_NAME', true)))          $settings['database']['db_name']      = $db_name;
+        if (!isset($settings['database']['db_name'])      && ($db_name =      getenv('TUALO_DB_SESSION', true)))          $settings['database']['db_name']      = $db_name;
         if (!isset($settings['database']['db_host'])      && ($host_name =    getenv('TUALO_DB_HOST', true)))          $settings['database']['db_host']      = $host_name;
         if (!isset($settings['database']['db_user'])      && ($user_name =    getenv('TUALO_DB_USER', true)))          $settings['database']['db_user']      = $user_name;
         if (!isset($settings['database']['db_pass'])        && ($password =     getenv('TUALO_DB_PASSWORD', true)))      $settings['database']['db_pass']        = $password;
