@@ -20,7 +20,7 @@ class Server
         if (!isset($settings['database']['db_name'])      && ($db_name =      getenv('TUALO_DB_NAME', true)))          $settings['database']['db_name']      = $db_name;
         if (!isset($settings['database']['db_host'])      && ($host_name =    getenv('TUALO_DB_HOST', true)))          $settings['database']['db_host']      = $host_name;
         if (!isset($settings['database']['db_user'])      && ($user_name =    getenv('TUALO_DB_USER', true)))          $settings['database']['db_user']      = $user_name;
-        if (!isset($settings['database']['db_pw'])        && ($password =     getenv('TUALO_DB_PASSWORD', true)))      $settings['database']['db_pw']        = $password;
+        if (!isset($settings['database']['db_pass'])        && ($password =     getenv('TUALO_DB_PASSWORD', true)))      $settings['database']['db_pass']        = $password;
         if (!isset($settings['database']['db_port'])      && ($port =         getenv('TUALO_DB_PORT', true)))          $settings['database']['db_port']      = $port;
         if (!isset($settings['database']['key_file'])     && ($key_file =     getenv('TUALO_DB_KEY_FILE', true)))      $settings['database']['key_file']     = $key_file;
         if (!isset($settings['database']['cert_file'])    && ($cert_file =    getenv('TUALO_DB_CERT_FILE', true)))     $settings['database']['cert_file']    = $cert_file;
@@ -40,7 +40,7 @@ class Server
 
         ) {
             $settings['database']['db_host'] = $settings["__SESSION_HOST__"];
-            $settings['database']['db_pw']   = $settings["__SESSION_PASSWORD__"];
+            $settings['database']['db_pass']   = $settings["__SESSION_PASSWORD__"];
             $settings['database']['db_user'] = $settings["__SESSION_USER__"];
             $settings['database']['db_name'] = $settings["__SESSION_DSN__"];
             $settings['database']['db_port'] = $settings["__SESSION_PORT__"];
