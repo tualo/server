@@ -46,8 +46,8 @@ class Server
             $settings['database']['db_port'] = $settings["__SESSION_PORT__"];
         }
 
-        if (isset($config["FORCE_DB_HOST"])) $settings['database']['force_db_host'] = $config["FORCE_DB_HOST"];
-        if (isset($config["FORCE_DB_PORT"])) $settings['database']['force_db_port'] = $config["FORCE_DB_PORT"];
+        if (isset($settings["FORCE_DB_HOST"])) $settings['database']['force_db_host'] = $settings["FORCE_DB_HOST"];
+        if (isset($settings["FORCE_DB_PORT"])) $settings['database']['force_db_port'] = $settings["FORCE_DB_PORT"];
 
 
         // for backward compatibility
