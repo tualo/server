@@ -67,7 +67,7 @@ class Server
     {
 
         //TualoApplication::set('requestPath', dirname($_SERVER["REQUEST_URI"]));
-        TualoApplication::set('requestPath', dirname($_SERVER["SCRIPT_NAME"]) . '/');
+        TualoApplication::set('requestPath', dirname($_SERVER["SCRIPT_NAME"]));
         TualoApplication::set('basePath', dirname($_SERVER['SCRIPT_FILENAME']));
         TualoApplication::set('cachePath', TualoApplication::get('basePath') . '/cache/');
         TualoApplication::set('configurationFile', TualoApplication::get('basePath') . '/configuration/.htconfig');
