@@ -6,6 +6,7 @@ use Tualo\Office\Basic\TualoApplication;
 use Tualo\Office\Basic\Route;
 use Tualo\Office\Basic\TualoDBSessionHandler;
 use tualo\Office\Basic\Middleware\Maintaince;
+use Tualo\Office\Basic\Path;
 
 class Server
 {
@@ -68,7 +69,7 @@ class Server
 
         //TualoApplication::set('requestPath', dirname($_SERVER["REQUEST_URI"]));
         TualoApplication::set('requestPath', dirname($_SERVER["SCRIPT_NAME"]));
-        TualoApplication::set('basePath', dirname($_SERVER['SCRIPT_FILENAME']));
+        TualoApplication::set('basePath', Path::normalize(dirname($_SERVER['SCRIPT_FILENAME'])));
         TualoApplication::set('cachePath', TualoApplication::get('basePath') . '/cache/');
         TualoApplication::set('configurationFile', TualoApplication::get('basePath') . '/configuration/.htconfig');
 
