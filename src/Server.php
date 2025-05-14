@@ -10,10 +10,27 @@ use Tualo\Office\Basic\Path;
 
 class Server
 {
+    public static function getHeader($hkey)
+    {
+        $is_web = http_response_code() !== FALSE;
+        $headers = [];
+        if ($is_web) $headers = getallheaders();
+
+        foreach ($headers as $key => $val) {
+            if (strtolower($hkey) == strtolower($key)) {
+                return $val;
+            }
+        }
+        return false;
+    }
+
     public static function loadIniFile()
     {
-        $settings = parse_ini_file((string)TualoApplication::get('configurationFile'), true);
+        $settings = parse_ini_file((string)TualoApplication::get('configurationFile'), true, INI_SCANNER_RAW);
+        if ($settings === false) {
 
+            throw new \Exception('Could not load configuration file');
+        }
 
 
         if (!isset($settings['database']))  $settings['php-server'] = [];
@@ -67,6 +84,29 @@ class Server
     public function run()
     {
 
+
+        $path = '';
+        $parsed_url = [];
+        $matches = [];
+
+        if (isset($_SERVER['REQUEST_URI'])) $parsed_url = parse_url($_SERVER['REQUEST_URI']); //Parse Uri
+        if (isset($_SERVER['REDIRECT_URL'])) $parsed_url = parse_url($_SERVER['REDIRECT_URL']);
+        if (isset($parsed_url['path'])) {
+            $path = $parsed_url['path'];
+        } else {
+            $path = '/';
+        }
+
+        $session_name = 'tualo';
+
+        if (preg_match('#/~/(?P<oauth>[\w\-]+)/*#', $path, $matches)) {
+            $session_name = 'tualocms';
+        } elseif (Server::getHeader('Authorization')) {
+            $session_name = 'tualoauth';
+        } else {
+            $session_name = 'tualo';
+        }
+        session_name($session_name);
         //TualoApplication::set('requestPath', dirname($_SERVER["REQUEST_URI"]));
         TualoApplication::set('requestPath', dirname($_SERVER["SCRIPT_NAME"]));
         TualoApplication::set('basePath', Path::normalize(dirname($_SERVER['SCRIPT_FILENAME'])));
