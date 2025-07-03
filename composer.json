@@ -1,32 +1,33 @@
 {
-    "name": "tualo/server",
-    "description": "Server class for tualo office",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Thomas Hoffmann",
-            "email": "thomas.hoffmann@tualo.de"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Tualo\\Office\\Server\\": "src/"
-        }
-    },
-    "minimum-stability": "dev",
-    "require": {
-        "tualo/ds": "^1.0.0 || @dev",
-        "tualo/bsc": "^1.0.0 || @dev",
-        "tualo/extjscmplr": "^1.0.0|| @dev",
-        "tualo/iconfont": "^1.0.0|| @dev",
-        "tualo/monacoeditor": "^1.0.0|| @dev",
-        "tualo/usereditor": "~1.0.0|| @dev",
-        "tualo/menueditor": "~1.0.0|| @dev",
-        "tualo/groupeditor": "~1.0.0|| @dev",
-        "tualo/profile": "^1.0.0|| @dev",
-        "tualo/tualojs": "^1.0.0|| @dev",
-        "tualo/dashboard": "^1.0.0|| @dev",
-        "tualo/pug": "^1.0.0|| @dev"
+  "name": "tualo/server",
+  "description": "Server class for tualo office",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thomas Hoffmann",
+      "email": "thomas.hoffmann@tualo.de"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Tualo\\Office\\Server\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "require": {
+    "tualo/ds": "^1.0.1",
+    "tualo/bsc": "^1.0.1",
+    "tualo/extjscmplr": "^1.0.1",
+    "tualo/iconfont": "^1.0.1",
+    "tualo/monacoeditor": "^1.0.1",
+    "tualo/usereditor": "^1.0.1",
+    "tualo/menueditor": "^1.0.1",
+    "tualo/groupeditor": "^1.0.1",
+    "tualo/profile": "^1.0.1",
+    "tualo/tualojs": "^1.0.1",
+    "tualo/dashboard": "^1.0.1",
+    "tualo/pug": "^1.0.1"
+  },
+  "version": "1.0.1"
 }
