@@ -17,17 +17,17 @@
   "minimum-stability": "dev",
   "require": {
     "tualo/ds": "^1.0.1",
-    "tualo/bsc": "^1.0.2",
-    "tualo/extjscmplr": "^1.0.1",
-    "tualo/iconfont": "^1.0.1",
+    "tualo/bsc": "^1.0.3",
+    "tualo/extjscmplr": "^1.0.2",
+    "tualo/iconfont": "^1.0.3",
     "tualo/monacoeditor": "^1.0.1",
     "tualo/usereditor": "^1.0.1",
     "tualo/menueditor": "^1.0.1",
     "tualo/groupeditor": "^1.0.1",
-    "tualo/profile": "^1.0.1",
+    "tualo/profile": "^1.0.2",
     "tualo/tualojs": "^1.0.1",
-    "tualo/dashboard": "^1.0.1",
-    "tualo/pug": "^1.0.1"
+    "tualo/dashboard": "^1.0.2",
+    "tualo/pug": "^1.0.2"
   },
-  "version": "1.0.2"
+  "version": "1.0.3"
 }
