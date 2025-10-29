@@ -16,8 +16,8 @@
   },
   "minimum-stability": "dev",
   "require": {
-    "tualo/ds": "^1.0",
-    "tualo/bsc": "^1.4",
+    "tualo/ds": "^1.5.7",
+    "tualo/bsc": "^1.4.0",
     "tualo/extjscmplr": "^1.0",
     "tualo/iconfont": "^1.0",
     "tualo/monacoeditor": "^1.0",
@@ -27,7 +27,7 @@
     "tualo/profile": "^1.0",
     "tualo/tualojs": "^1.0",
     "tualo/dashboard": "^1.0",
-    "tualo/pug": "^1.0"
+    "tualo/pug": "^1.3.5"
   },
-  "version": "1.0.5"
+  "version": "1.0.6"
 }
