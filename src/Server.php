@@ -101,6 +101,12 @@ class Server
 
         if (preg_match('#/~/(?P<oauth>[\w\-]+)/*#', $path, $matches)) {
             $session_name = TualoApplication::configuration('cookie', 'cms_name', 'tualocms');
+
+            if ($session_samesite = TualoApplication::configuration('cookie', 'cms_samesite', '') != '') {
+                session_set_cookie_params([
+                    'samesite' => $session_samesite
+                ]);
+            }
         } elseif (Server::getHeader('Authorization')) {
             $session_name = TualoApplication::configuration('cookie', 'authorization_name', 'tualoauth');
         } else {
