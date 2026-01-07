@@ -97,8 +97,15 @@ class Server
             $path = '/';
         }
 
-        $session_name = 'tualo';
+        TualoApplication::set('requestPath', dirname($_SERVER["SCRIPT_NAME"]));
+        TualoApplication::set('basePath', Path::normalize(dirname($_SERVER['SCRIPT_FILENAME'])));
+        TualoApplication::set('cachePath', TualoApplication::get('basePath') . '/cache/');
+        TualoApplication::set('configurationFile', TualoApplication::get('basePath') . '/configuration/.htconfig');
 
+        self::loadIniFile();
+
+
+        $session_name = 'tualo';
         if (preg_match('#/~/(?P<oauth>[\w\-]+)/*#', $path, $matches)) {
             $session_name = TualoApplication::configuration('cookie', 'cms_name', 'tualocms');
 
@@ -113,13 +120,6 @@ class Server
             $session_name = TualoApplication::configuration('cookie', 'backend_name', 'tualo');
         }
         session_name($session_name);
-        //TualoApplication::set('requestPath', dirname($_SERVER["REQUEST_URI"]));
-        TualoApplication::set('requestPath', dirname($_SERVER["SCRIPT_NAME"]));
-        TualoApplication::set('basePath', Path::normalize(dirname($_SERVER['SCRIPT_FILENAME'])));
-        TualoApplication::set('cachePath', TualoApplication::get('basePath') . '/cache/');
-        TualoApplication::set('configurationFile', TualoApplication::get('basePath') . '/configuration/.htconfig');
-
-        self::loadIniFile();
 
 
 
