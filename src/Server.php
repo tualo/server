@@ -122,7 +122,7 @@ class Server
         session_name($session_name);
 
 
-
+        $settings = TualoApplication::get('configuration');
         if (isset($settings['php-server'])) {
             foreach ($settings['php-server'] as $key => $value) {
                 ini_set($key, $value);
