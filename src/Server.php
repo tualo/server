@@ -5,7 +5,7 @@ namespace Tualo\Office\Server;
 use Tualo\Office\Basic\TualoApplication;
 use Tualo\Office\Basic\Route;
 use Tualo\Office\Basic\TualoDBSessionHandler;
-use tualo\Office\Basic\Middleware\Maintaince;
+use Tualo\Office\Basic\Middleware\Maintaince;
 use Tualo\Office\Basic\Path;
 
 class Server
@@ -99,8 +99,8 @@ class Server
 
         TualoApplication::set('requestPath', dirname($_SERVER["SCRIPT_NAME"]));
         TualoApplication::set('basePath', Path::normalize(dirname($_SERVER['SCRIPT_FILENAME'])));
-        TualoApplication::set('cachePath', TualoApplication::get('basePath') . '/cache/');
-        TualoApplication::set('configurationFile', TualoApplication::get('basePath') . '/configuration/.htconfig');
+        TualoApplication::set('cachePath', (string)TualoApplication::get('basePath') . '/cache/');
+        TualoApplication::set('configurationFile', (string)TualoApplication::get('basePath') . '/configuration/.htconfig');
 
         self::loadIniFile();
 
@@ -122,8 +122,8 @@ class Server
         session_name($session_name);
 
 
-        $settings = TualoApplication::get('configuration');
-        if (isset($settings['php-server'])) {
+        $settings = (array)TualoApplication::get('configuration');
+        if (isset($settings['php-server']) && is_array($settings['php-server'])) {
             foreach ($settings['php-server'] as $key => $value) {
                 ini_set($key, $value);
             }
