@@ -84,6 +84,8 @@ class Server
     }
     public function run()
     {
+        TualoApplication::set('session', null);
+        TualoApplication::set('maintanceMode', 'Off');
 
         $path = '';
         $parsed_url = [];
@@ -96,6 +98,7 @@ class Server
         } else {
             $path = '/';
         }
+
 
         TualoApplication::set('requestPath', dirname($_SERVER["SCRIPT_NAME"]));
         TualoApplication::set('basePath', Path::normalize(dirname($_SERVER['SCRIPT_FILENAME'])));
